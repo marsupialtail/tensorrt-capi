@@ -1,4 +1,12 @@
 
+//!
+//! sampleMNISTAPI.cpp
+//! This file contains the implementation of the MNIST API sample. It creates the network
+//! for MNIST classification using the API.
+//! It can be run with the following command line:
+//! Command: ./sample_mnist_api [-h or --help] [-d=/path/to/data/dir or --datadir=/path/to/data/dir] [--useDLACore=<int>]
+//!
+
 #include "argsParser.h"
 #include "buffers.h"
 #include "common.h"
@@ -20,9 +28,6 @@
 using namespace std::chrono;
 using namespace std;
 const std::string gSampleName = "TensorRT.sample_mnist_api";
-
-static const int INPUT_H = 224;
-static const int INPUT_W = 224;
 
 //!
 //! \brief The SampleMNISTAPIParams structure groups the additional parameters required by
@@ -152,8 +157,6 @@ bool SampleMNISTAPI::build()
     return true;
 }
 
-ILayer 
-"""
 ILayer * SampleMNISTAPI::addDepthwiseBlock(
     SampleUniquePtr<nvinfer1::INetworkDefinition>& network,
     ILayer * input,
@@ -256,7 +259,6 @@ ILayer * SampleMNISTAPI::addDepthwiseBlock(
        return output;
     }
     }
-"""
 //!
 //! \brief Uses the API to create the MNIST Network
 //!
